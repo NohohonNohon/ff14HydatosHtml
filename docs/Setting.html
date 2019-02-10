@@ -1,0 +1,330 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>FF14　エウレカ・ヒュダトス編　設定ページ</title>
+	<link rel="stylesheet" href="css/leaflet.css">
+	<link rel="stylesheet" href="css/L.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/setting.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/leaflet.js"></script>
+	<script src="js/L.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/time.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/weather.js"></script>
+	<script src="js/setting.js"></script>
+	<script>
+	// ページ読み込み完了と同時に初期処理を実行する
+	$(window).on('load', setting.init);
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<b>FF14　エウレカ・ヒュダトス編　設定ページ</b>
+		<div id="google_translate_element"></div>
+	</div>
+	<script type="text/javascript">
+	function googleTranslateElementInit() {
+	new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'de,en,fr,it,ko,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+	}
+	</script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+	<table border="1">
+	<tbody>
+		<tr>
+			<td class="leftTable">
+				<div id="map"></div>
+			</td>
+			<td class="rightTable">
+				<table id="NMTable" border="1">
+					<thead>
+						<tr>
+							<td>EL</td>
+							<td>FATE(NM)</td>
+							<td>トリガー</td>
+							<td>Lv</td>
+							<td>備考</td>
+							<td>x</td>
+							<td>y</td>
+							<td>shout</td>
+							<td>shout(略称)</td>
+							<td>shout(むーむーさん準拠)</td>
+						</tr>
+					</thead>
+					<tbody class="notranslate">
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+						<tr>
+							<td><input type="tel" class="ELInput" maxlength="2"></td>
+							<td><input type="text" class="NMInput"></td>
+							<td><input type="text" class="TrigerInput"></td>
+							<td><input type="tel" class="LvInput" maxlength="2"></td>
+							<td><input type="text" class="RemarksInput"></td>
+							<td><input type="tel" class="XInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="tel" class="YInput" maxlength="4" onchange="setting.setMark()"></td>
+							<td><input type="text" class="Shout1Input"></td>
+							<td><input type="text" class="Shout2Input"></td>
+							<td><input type="text" class="Shout3Input"></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+
+
+	<div id="maintanance">
+		<button type="button" name="ResetData" onclick="setting.outputData()" class="btn">JSONデータ出力</button>
+		<button type="button" name="SaveData" onclick="main.saveData()" class="btn">JSONデータ保存</button>
+		<button type="button" name="ResetData" onclick="main.resetData(true)" class="btn">設定リセット</button>
+		<p class="settingCaption">NMデータJSONデータ(EL,NM,Triger,Lv,Remarks,x,y,shout1,shout2,shout3)</p>
+		<textarea id="NMData" rows="4" class="settingData"></textarea>
+		<p class="settingCaption">シャウト取り込み正規表現JSONデータ(マッチング条件,[NM01-20])</p>
+		<textarea id="ImportNMList" rows="4" class="settingData"></textarea>
+		<p>編集したJSONデータを共有する場合、<a href="https://zawazawa.jp/hydatos/topic/2">共有用掲示板</a>を使用してください。</p>
+		<p class="settingCaption">JSONデータ共有用コメント</p>
+		<textarea id="ShareJSON" rows="6" class="settingData"></textarea>
+		<div class="message">
+			<p id="errorMsg1">$件目のデータが9項目設定されていません。</p>
+			<p id="errorMsg2">$件目のデータにてx座標に数値が入力されていません。</p>
+			<p id="errorMsg3">$件目のデータにてy座標に数値が入力されていません。</p>
+			<p id="errorMsg4">$件目のデータが2項目設定されていません。</p>
+			<p id="errorMsg5">$件目のデータにて2項目目のデータに「NM01」～「NM20」以外は入力しないでください。</p>
+			<p id="errorMsg6">入力されたNMデータの形式に誤りがあります。</p>
+			<p id="successMsg1">設定を保存しました。</p>
+			<p id="successMsg2">保存した設定をリセットしました。ページ再表示時に設定したデータがロードされます。</p>
+			<p id="successMsg3">JSONデータを出力しました。</p>
+		</div>
+	</div>
+</body>
+</html>

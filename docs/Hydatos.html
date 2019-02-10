@@ -12,6 +12,10 @@
 	<script src="js/time.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/weather.js"></script>
+	<script>
+	// ページ読み込み完了と同時に初期処理を実行する
+	$(window).on('load', main.init);
+	</script>
 </head>
 
 <body>
@@ -230,14 +234,9 @@
 	※NOWボタンを押すと、現在の時刻が自動記入されます。また、マップ上の記号をクリックしても同様の効果があります。<br>
 	このページは<a href="https://mogaasa.web.fc2.com/anemoth.html" _pageexpand_="12">FF14　エウレカ・アネモス編　支援ツール</a>を元に作成されました。
 	<div id="maintanance">
-		<p>他言語への変更やNM情報の変更の際、下記JSONデータを変更してください。<br>
+		<p style="margin-bottom:0px;">NMデータの設定は以下の詳細設定ページで設定してください。<br>
 		保存したデータはブラウザに保存され、再表示時にロードされます。</p>
-		<p class="settingCaption">NMデータJSONデータ(EL,NM,Triger,Lv,Remarks,x,y,shout1,shout2,shout3)</p>
-		<textarea id="NMData" rows="4" class="settingData"></textarea>
-		<p class="settingCaption">シャウト取り込み正規表現JSONデータ(マッチング条件,[NM01-20])</p>
-		<textarea id="ImportNMList" rows="4" class="settingData"></textarea>
-		<button type="button" name="SaveData" onclick="main.saveData()" class="btn">設定保存</button>
-		<button type="button" name="ResetData" onclick="main.resetData(true)" class="btn">設定リセット</button>
+		<button type="button" name="moveSettingPage" onclick="main.moveSettingPage()" class="btn">詳細設定ぺージ</button>
 		<div class="message">
 			<p id="errorMsg1">$件目のデータが9項目設定されていません。</p>
 			<p id="errorMsg2">$件目のデータにてx座標に数値が入力されていません。</p>
