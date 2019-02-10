@@ -285,7 +285,7 @@ var main = (function() {
 		* 詳細設定ページに遷移する。
 		*/
 		moveSettingPage: function() {
-			location.href='setting.html';
+			location.href='Setting.html';
 		}
 	};
 	return global;
