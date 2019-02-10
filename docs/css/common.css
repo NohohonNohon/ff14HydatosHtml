@@ -48,10 +48,12 @@
 
 .leftTable {
 	width: 500px;
+	vertical-align: top;
 }
 
 .rightTable {
 	min-width: 540px;
+	vertical-align: top;
 }
 
 /* 地図 */
