@@ -20,7 +20,7 @@
 
 <body>
 	<div class="header">
-		<b>FF14　エウレカ・ヒュダトス編　支援ツール Ver<span id="version">0.0.1</span></b><span id="oldMsg">※古いバージョンのデータを使用しています。最新に更新する場合、ページ下部の「詳細設定ページ」にて設定ページに移動後、「設定リセット」ボタンを押してください。</span>
+		<b>FF14　エウレカ・ヒュダトス編　支援ツール Ver<span id="version">0.0.1</span></b><span id="oldMsg">※古いバージョンのデータを使用しています。最新に更新する場合、ページ下部の「設定リセット」ボタンを押してください。</span>
 		<div id="google_translate_element"></div>
 	</div>
 	<script type="text/javascript">
@@ -237,6 +237,7 @@
 		<p style="margin-bottom:0px;">NMデータの設定は以下の詳細設定ページで設定してください。<br>
 		保存したデータはブラウザに保存され、再表示時にロードされます。</p>
 		<button type="button" name="moveSettingPage" onclick="main.moveSettingPage()" class="btn">詳細設定ぺージ</button>
+		<button type="button" name="ResetData" onclick="main.resetData(true)" class="btn">設定リセット</button>
 		<div class="message">
 			<p id="errorMsg1">$件目のデータが9項目設定されていません。</p>
 			<p id="errorMsg2">$件目のデータにてx座標に数値が入力されていません。</p>
