@@ -80,7 +80,7 @@ weatherChances: {
 "Ishgard": function(chance) {if (chance < 60) {return {"id":"Snow","name":"雪"};}  else if (chance < 70) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 75) {return {"id":"Clear Skies","name":"快晴"};}  else if (chance < 90) {return {"id":"Clouds","name":"曇り"};}  else {return {"id":"Fog","name":"霧"};}},
 "Coerthas Central Highlands": function(chance) {if (chance < 20) {return {"id":"Blizzards","name":"吹雪"};}  else if (chance < 60) {return {"id":"Snow","name":"雪"};}  else if (chance < 70) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 75) {return {"id":"Clear Skies","name":"快晴"};}  else if (chance < 90) {return {"id":"Clouds","name":"曇り"};}  else {return {"id":"Fog","name":"霧"};}},
 "Coerthas Western Highlands": function(chance) {if (chance < 20) {return {"id":"Blizzards","name":"吹雪"};}  else if (chance < 60) {return {"id":"Snow","name":"雪"};}  else if (chance < 70) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 75) {return {"id":"Clear Skies","name":"快晴"};}  else if (chance < 90) {return {"id":"Clouds","name":"曇り"};}  else {return {"id":"Fog","name":"霧"};}},
-"The Sea of Clouds": function(chance) {if (chance < 30) {return {"id":"Clear Skies","name":"快晴"};}  else if (chance < 60) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 70) {return {"id":"Clouds","name":"曇り"};}  else if (chance < 80) {return {"id":"Fog","name":"霧"};}  else if (chance < 90) {return {"id":"Wind","name":"風"};}  else {return {"id":"UmbralWind","name":"霊風"};}},
+"The Sea of Clouds": function(chance) {if (chance < 30) {return {"id":"Clear Skies","name":"快晴"};}  else if (chance < 60) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 70) {return {"id":"Clouds","name":"曇り"};}  else if (chance < 80) {return {"id":"Fog","name":"霧"};}  else if (chance < 90) {return {"id":"Wind","name":"風"};}  else {return {"id":"Umbral Wind","name":"霊風"};}},
 "Azys Lla": function(chance) {if (chance < 35) {return {"id":"Fair Skies","name":"晴れ"};}  else if (chance < 70) {return {"id":"Clouds","name":"曇り"};}  else {return {"id":"Thunder","name":"雷"};}},
 "The Dravanian Forelands": function(chance) {if (chance < 10) {return {"id":"Clouds","name":"曇り"};}  else if (chance < 20) {return {"id":"Fog","name":"霧"};}  else if (chance < 30) {return {"id":"Thunder","name":"雷"};}  else if (chance < 40) {return {"id":"Dust Storms","name":"砂塵"};}  else if (chance < 70) {return {"id":"Clear Skies","name":"快晴"};}  else {return {"id":"Fair Skies","name":"晴れ"};}},
 "The Dravanian Hinterlands": function(chance) {if (chance < 10) {return {"id":"Clouds","name":"曇り"};}  else if (chance < 20) {return {"id":"Fog","name":"霧"};}  else if (chance < 30) {return {"id":"Rain","name":"雨"};}  else if (chance < 40) {return {"id":"Showers","name":"暴雨"};}  else if (chance < 70) {return {"id":"Clear Skies","name":"快晴"};}  else {return {"id":"Fair Skies","name":"晴れ"};}},
@@ -109,7 +109,8 @@ weatherChances: {
   else if (chance < 82) {return {"id":"Thunder","name":"雷"};}
   else {return {"id":"Blizzards","name":"吹雪"};}
 },
-"Pyros": function(chance) { if (chance < 10) {return {"id":"Fair Skies","name":"晴れ"};} else if (chance < 28) {return {"id":"Heat Waves","name":"灼熱波"};} else if (chance < 46) {return {"id":"Thunder","name":"雷"};} else if (chance < 64) {return {"id":"Blizzard","name":"吹雪"};} else if (chance < 82) {return {"id":"UmbralWind","name":"霊風"};} else {return {"id":"Snow","name":"雪"};}}
+"Pyros": function(chance) { if (chance < 10) {return {"id":"Fair Skies","name":"晴れ"};} else if (chance < 28) {return {"id":"Heat Waves","name":"灼熱波"};} else if (chance < 46) {return {"id":"Thunder","name":"雷"};} else if (chance < 64) {return {"id":"Blizzard","name":"吹雪"};} else if (chance < 82) {return {"id":"Umbral Wind","name":"霊風"};} else {return {"id":"Snow","name":"雪"};}},
+"Hydatos": function(chance) { if (chance < 12) {return {"id":"Fair Skies","name":"晴れ"};} else if (chance < 34) {return {"id":"Showers","name":"暴雨"};} else if (chance < 56) {return {"id":"Gloom","name":"妖霧"};} else if (chance < 78) {return {"id":"Thunderstorms","name":"雷雨"};} else {return {"id":"Snow","name":"雪"};}}
 },
 
 weatherLists: {
@@ -138,7 +139,7 @@ weatherLists: {
 "Ishgard": [{"id":"Snow","name":"雪"}, {"id":"Fair Skies","name":"晴れ"}, {"id":"Clear Skies","name":"快晴"}, {"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}],
 "Coerthas Central Highlands": [{"id":"Blizzards","name":"吹雪"}, {"id":"Snow","name":"雪"}, {"id":"Fair Skies","name":"晴れ"}, {"id":"Clear Skies","name":"快晴"}, {"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}],
 "Coerthas Western Highlands": [{"id":"Blizzards","name":"吹雪"}, {"id":"Snow","name":"雪"}, {"id":"Fair Skies","name":"晴れ"}, {"id":"Clear Skies","name":"快晴"}, {"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}],
-"The Sea of Clouds": [{"id":"Clear Skies","name":"快晴"}, {"id":"Fair Skies","name":"晴れ"}, {"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}, {"id":"Wind","name":"風"}, {"id":"UmbralWind","name":"霊風"}],
+"The Sea of Clouds": [{"id":"Clear Skies","name":"快晴"}, {"id":"Fair Skies","name":"晴れ"}, {"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}, {"id":"Wind","name":"風"}, {"id":"Umbral Wind","name":"霊風"}],
 "Azys Lla": [{"id":"Fair Skies","name":"晴れ"}, {"id":"Clouds","name":"曇り"}, {"id":"Thunder","name":"雷"}],
 "The Dravanian Forelands": [{"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}, {"id":"Thunder","name":"雷"}, {"id":"Dust Storms","name":"砂塵"}, {"id":"Clear Skies","name":"快晴"}, {"id":"Fair Skies","name":"晴れ"}],
 "The Dravanian Hinterlands": [{"id":"Clouds","name":"曇り"}, {"id":"Fog","name":"霧"}, {"id":"Rain","name":"雨"}, {"id":"Showers","name":"暴雨"}, {"id":"Clear Skies","name":"快晴"}, {"id":"Fair Skies","name":"晴れ"}],
@@ -152,8 +153,9 @@ weatherLists: {
 "The Ruby Sea": [{"id":"Thunder","name":"雷"},{"id":"Wind","name":"風"},{"id":"Clouds","name":"曇り"},{"id":"Fair Skies","name":"晴れ"},{"id":"Clear Skies","name":"快晴"}],
 "Yanxia": [{"id":"Showers","name":"暴雨"},{"id":"Rain","name":"雨"},{"id":"Fog","name":"霧"},{"id":"Clouds","name":"曇り"},{"id":"Fair Skies","name":"晴れ"},{"id":"Clear Skies","name":"快晴"}],
 "The Azim Steppe": [{"id":"Gales","name":"暴風"},{"id":"Wind","name":"風"},{"id":"Rain","name":"雨"},{"id":"Fog","name":"霧"},{"id":"Clouds","name":"曇り"},{"id":"Fair Skies","name":"晴れ"},{"id":"Clear Skies","name":"快晴"}],
-"Anemos": [{"id":"Fair Skies","name":"晴れ"},{"id":"Gales","name":"暴風"},{"id":"Showers","name":"暴雨"},{"id":"Snow","name":"雪"},{"id":"unknown","name":"不明"}],
+"Anemos": [{"id":"Fair Skies","name":"晴れ"},{"id":"Gales","name":"暴風"},{"id":"Showers","name":"暴雨"},{"id":"Snow","name":"雪"}],
 "Pagos": [{"id":"Fair Skies","name":"晴れ"},{"id":"Fog","name":"霧"},{"id":"Heat Waves","name":"灼熱波"},{"id":"Snow","name":"雪"},{"id":"Thunder","name":"雷"},{"id":"Blizzards","name":"吹雪"}],
-"Pyros": [{"id":"Fair Skies","name":"晴れ"},{"id":"Heat Waves","name":"灼熱波"},{"id":"Thunder","name":"雷"},{"id":"Blizzard","name":"吹雪"},{"id":"UmbralWind","name":"霊風"},{"id":"Snow","name":"雪"}]
+"Pyros": [{"id":"Fair Skies","name":"晴れ"},{"id":"Heat Waves","name":"灼熱波"},{"id":"Thunder","name":"雷"},{"id":"Blizzard","name":"吹雪"},{"id":"Umbral Wind","name":"霊風"},{"id":"Snow","name":"雪"}],
+"Hydatos": [{"id":"Fair Skies","name":"晴れ"},{"id":"Showers","name":"暴雨"},{"id":"Gloom","name":"妖霧"},{"id":"Thunderstorms","name":"雷雨"},{"id":"Snow","name":"雪"}]
 }
 };

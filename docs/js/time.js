@@ -593,10 +593,9 @@ var time = (function() {
 	}
 
 	function getWeather(date) {
-		/*未対応
 		var weatherTime = WeatherFinder.getWeatherTimeFloor(date).getTime();
 		var weather = WeatherFinder.getWeather(weatherTime, 'Hydatos');
-		return WeatherFinder.getWeatherName(weather.id);*/
+		return WeatherFinder.getWeatherName(weather.id);
 		return '--';
 	}
 
